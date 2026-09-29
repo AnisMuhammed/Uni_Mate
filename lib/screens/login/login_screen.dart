@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_theme.dart';
 import '../layout/main_layout.dart'; // استيراد الشاشة الرئيسية
 import '../register/register_screen.dart';
+import '../forgot_password/forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -305,7 +306,13 @@ TextFormField(
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()),
+                              );
+                              // كود الانتقال لشاشة استعادة كلمة المرور
+                            },
                             child: const Text(
                               'نسيت كلمة المرور؟',
                               style: TextStyle(
