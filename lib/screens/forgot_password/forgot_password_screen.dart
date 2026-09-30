@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../core/app_theme.dart';
+import '../../widgets/app_logo.dart';
 
 /// شاشة استعادة كلمة المرور — ثلاث مراحل في شاشة واحدة:
 /// 0) البريد الإلكتروني  1) رمز التحقق  2) كلمة المرور الجديدة
@@ -213,15 +214,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
         ),
         const Spacer(),
-        Container(
-          width: 44,
-          height: 44,
-          decoration: BoxDecoration(
-            color: AppTheme.charcoalGray,
-            borderRadius: BorderRadius.circular(14),
-          ),
-          child: const Icon(Icons.school, color: Colors.white, size: 24),
-        ),
+        const AppLogo(size: 44),
       ],
     );
   }
@@ -582,6 +575,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Text(
+          'تتذكر كلمة المرور؟',
+          style: TextStyle(
+            color: Colors.grey,
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
+        ),
+        const SizedBox(width: 4),
         GestureDetector(
           onTap: () => Navigator.pop(context),
           child: const Text(
@@ -591,15 +593,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               fontWeight: FontWeight.w700,
               fontSize: 14,
             ),
-          ),
-        ),
-        const SizedBox(width: 4),
-        const Text(
-          'تتذكر كلمة المرور؟',
-          style: TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/app_theme.dart';
+import '../../widgets/app_logo.dart';
 import '../layout/main_layout.dart'; // استيراد الشاشة الرئيسية
 import '../register/register_screen.dart';
 import '../forgot_password/forgot_password_screen.dart';
@@ -91,19 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const SizedBox(height: 30),
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: AppTheme.warmOrange,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: const Icon(
-                                Icons.school_outlined,
-                                color: Colors.white,
-                                size: 45,
-                              ),
-                            ),
+                            const AppLogo(size: 80),
                             const SizedBox(height: 12),
                             const Text(
                               'UniMate',

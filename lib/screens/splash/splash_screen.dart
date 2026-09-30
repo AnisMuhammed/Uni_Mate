@@ -1,6 +1,7 @@
 // lib/screens/splash/splash_screen.dart
 import 'package:flutter/material.dart';
 import '../../core/app_theme.dart';
+import '../../widgets/app_logo.dart';
 import '../login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -36,20 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // أيقونة التطبيق (استبدلها بصورة الشعار لاحقاً إذا أردت)
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                color: AppTheme.warmOrange,
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: const Icon(
-                Icons.school_outlined, // أيقونة مؤقتة تشبه فكرة الشعار
-                color: Colors.white,
-                size: 50,
-              ),
-            ),
+            // شعار التطبيق الرسمي
+            const AppLogo(size: 100),
             const SizedBox(height: 24),
             // اسم التطبيق
             const Text(
