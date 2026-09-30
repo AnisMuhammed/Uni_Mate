@@ -1,18 +1,29 @@
-# uni_mate
+# 🎓 UniMate - يوني ميت
 
-A new Flutter project.
+تطبيق ذكي ومتكامل لإدارة الحياة الجامعية للطلاب. يهدف **UniMate** إلى مساعدة الطالب الجامعي في تنظيم وقته وتتبع مساره الأكاديمي بكل سهولة، من خلال واجهة مستخدم عصرية وسلسة.
 
-## Getting Started
+## ✨ الميزات الرئيسية (Key Features)
 
-This project is a starting point for a Flutter application.
+* **🌐 ثنائي اللغة (Bilingual):** دعم كامل للغتين العربية والإنجليزية مع تكيف تلقائي لاتجاه الشاشة (RTL & LTR).
+* **🌗 ثيمات ديناميكية (Dynamic Theming):** يدعم الوضعين الليلي (Dark Mode) والنهاري (Light Mode) بشكل كامل ومريح للعين.
+* **🏠 لوحة القيادة (Dashboard):** شاشة رئيسية توفر لمحة سريعة عن المحاضرة القادمة، الإعلانات الهامة، ونظرة عامة على الإحصائيات الأكاديمية.
+* **📅 الجدول الدراسي (Schedule):** عرض تفاعلي للجدول الأسبوعي واليومي للمحاضرات والمعامل، مع تفاصيل الأوقات والقاعات.
+* **📚 إدارة المقررات (Courses):** تتبع المواد الدراسية المسجلة، نسبة إنجاز كل مادة، وتحميل المراجع والملحقات الخاصة بها.
+* **✅ المهام والواجبات (Tasks):** نظام لتتبع المهام (الكل، القادمة، المكتملة) مع تنبيهات بمواعيد التسليم.
+* **📝 الاختبارات (Exams):** جدول الاختبارات مع عداد تنازلي ذكي ونصائح أكاديمية للمراجعة.
+* **📊 السجل الأكاديمي (Grades & GPA):** تتبع الدرجات لكل فصل دراسي ومراقبة الأداء والمعدل التراكمي.
+* **📢 الإعلانات (Announcements):** نظام إشعارات لإعلانات الجامعة والكلية مصنفة حسب الأهمية (عاجل، أكاديمي، عام).
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ التقنيات المستخدمة (Tech Stack)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+* **إطار العمل:** [Flutter](https://flutter.dev/)
+* **اللغة:** Dart
+* **إدارة الترجمة:** `flutter_localizations` (ARB files)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# Uni_Mate"  
+## 🚀 طريقة التشغيل (Getting Started)
+
+لتشغيل هذا المشروع على جهازك المحلي، اتبع الخطوات التالية:
+
+1. قم بعمل استنساخ (Clone) للمستودع:
+   ```bash
+   git clone [https://github.com/YourUsername/Uni_Mate.git](https://github.com/YourUsername/Uni_Mate.git)
