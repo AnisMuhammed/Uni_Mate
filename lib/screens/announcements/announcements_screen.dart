@@ -156,13 +156,24 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Icon(Icons.person_outline, size: 14, color: secColor),
-                            const SizedBox(width: 6),
-                            Text(sender, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: secColor)),
-                          ],
+                        Flexible(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.person_outline, size: 14, color: secColor),
+                              const SizedBox(width: 6),
+                              Flexible(
+                                child: Text(
+                                  sender,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: secColor),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         Text(date, style: TextStyle(fontSize: 11, fontWeight: FontWeight.w500, color: secColor.withOpacity(0.8))),
                       ],
                     ),

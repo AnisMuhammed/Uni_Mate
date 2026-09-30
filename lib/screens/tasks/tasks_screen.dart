@@ -424,26 +424,33 @@ class _TasksScreenState extends State<TasksScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.menu_book_outlined,
-                              size: 16,
-                              color: secColor,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              courseName,
-                              style: TextStyle(
-                                fontSize: 12,
+                        // اسم المادة داخل Expanded حتى لا يتجاوز الصف عرض الشاشة
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.menu_book_outlined,
+                                size: 16,
                                 color: secColor,
-                                fontWeight: FontWeight.w500,
                               ),
-                            ),
-                          ],
+                              const SizedBox(width: 4),
+                              Flexible(
+                                child: Text(
+                                  courseName,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: secColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,

@@ -80,13 +80,31 @@ class _ExamsScreenState extends State<ExamsScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(loc.upcomingExamsTitle, style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: textColor)),
-                Row(
-                  children: [
-                    const Icon(Icons.warning_amber_rounded, color: AppTheme.warmOrange, size: 18),
-                    const SizedBox(width: 4),
-                    Text(loc.watchDeadlines, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppTheme.warmOrange.withOpacity(0.9))),
-                  ],
+                Flexible(
+                  child: Text(
+                    loc.upcomingExamsTitle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: textColor),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Flexible(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.warning_amber_rounded, color: AppTheme.warmOrange, size: 18),
+                      const SizedBox(width: 4),
+                      Flexible(
+                        child: Text(
+                          loc.watchDeadlines,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppTheme.warmOrange.withOpacity(0.9)),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -135,27 +153,49 @@ class _ExamsScreenState extends State<ExamsScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                          decoration: BoxDecoration(color: AppTheme.warmOrange.withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
-                          child: Row(
-                            children: [
-                              const Icon(Icons.schedule, size: 14, color: AppTheme.warmOrange),
-                              const SizedBox(width: 4),
-                              Text(countdown, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.warmOrange)),
-                            ],
+                        // كل عنصر داخل Flexible حتى لا يتجاوز الصف عرض البطاقة
+                        Flexible(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                            decoration: BoxDecoration(color: AppTheme.warmOrange.withOpacity(0.1), borderRadius: BorderRadius.circular(20)),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Icon(Icons.schedule, size: 14, color: AppTheme.warmOrange),
+                                const SizedBox(width: 4),
+                                Flexible(
+                                  child: Text(
+                                    countdown,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: AppTheme.warmOrange),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Text(courseName, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: secColor)),
-                            const SizedBox(width: 6),
-                            Container(
-                              padding: const EdgeInsets.all(4),
-                              decoration: BoxDecoration(color: borderColor, borderRadius: BorderRadius.circular(6)),
-                              child: Icon(Icons.menu_book_outlined, size: 14, color: textColor),
-                            ),
-                          ],
+                        const SizedBox(width: 8),
+                        Flexible(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  courseName,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: secColor),
+                                ),
+                              ),
+                              const SizedBox(width: 6),
+                              Container(
+                                padding: const EdgeInsets.all(4),
+                                decoration: BoxDecoration(color: borderColor, borderRadius: BorderRadius.circular(6)),
+                                child: Icon(Icons.menu_book_outlined, size: 14, color: textColor),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

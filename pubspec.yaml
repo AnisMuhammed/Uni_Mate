@@ -79,5 +79,10 @@ flutter_launcher_icons:
   ios: true
   image_path: "assets/icon/app_icon.png"
   remove_alpha_ios: true
-  adaptive_icon_background: "#36454F"
+  # لون الخلفية مطابق تقريباً لخلفية صورة الشعار.
+  # كان "#36454F" (فحمي فاتح) وهو سبب ظهور مربع غامق داخل مربع أفتح.
+  adaptive_icon_background: "#222B36"
   adaptive_icon_foreground: "assets/icon/app_icon.png"
+  # 0 = الشعار يملأ الأيقونة كاملة مثل صورة الشعار الأصلية.
+  # القيمة الافتراضية (16) تصغّره وتُظهر الخلفية حوله.
+  adaptive_icon_foreground_inset: 0

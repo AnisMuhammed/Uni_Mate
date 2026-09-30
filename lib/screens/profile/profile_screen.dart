@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../core/app_theme.dart';
 import '../../main.dart'; // للوصول لـ localeNotifier و themeNotifier
+import '../login/login_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -112,7 +113,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // الرجوع لواجهة تسجيل الدخول مع تفريغ مسار التنقل بالكامل
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => const LoginScreen()),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFE65150),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

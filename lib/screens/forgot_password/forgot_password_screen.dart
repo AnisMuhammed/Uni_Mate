@@ -519,6 +519,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           ),
         ),
         onChanged: (value) => _handleOtpChanged(index, value),
+        onTap: () {
+          // تحديد الرقم الموجود مسبقاً حتى تستبدله الكتابة مباشرة،
+          // لأن maxLength: 1 كان يمنع إدخال رقم جديد فوق رقم قديم
+          final text = _otpControllers[index].text;
+          _otpControllers[index].selection = TextSelection(
+            baseOffset: 0,
+            extentOffset: text.length,
+          );
+        },
       ),
     );
   }
